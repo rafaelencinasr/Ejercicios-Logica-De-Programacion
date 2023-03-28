@@ -11,7 +11,7 @@ Pequeño resumen del ejercicio
 
 
 // Funcion para traer valores de los inputs
-function obtenerValoresDeInputs(){
+function obtenerValoresDeInputsYProgramaSolucion(){
     // Obtener los valores de los inputs 1, 2, y 3, con .value
     let input1 = inputNum1.value;
     let input2 = inputNum2.value;
@@ -35,6 +35,15 @@ const inputNum1 = document.querySelector('#inputNum1');
 const inputNum2 = document.querySelector('#inputNum2');
 const inputNum3 = document.querySelector('#inputNum3');
 
+// Para detectar si el usuario presiono Enter en el teclado, crear un evento "click" en botonCalcular
+inputNum1.addEventListener("keypress", function(event) {
+    // If the user presses the "Enter" key on the keyboard
+    if (event.key === "Enter") {
+        console.log(`Enter presionado`)
+        document.getElementById("botonCalcular").click();
+    }
+  });
+
 
 // Ubicacion del boton
 const botonCalcular = document.querySelector('#botonCalcular');
@@ -43,5 +52,5 @@ const botonCalcular = document.querySelector('#botonCalcular');
 botonCalcular.addEventListener('click', obtenerValoresDeInputs);
 
 // Ubicacion para mostrar resultados
-const ubicacionMayor = document.querySelector('#ubicacionMayor');
-const ubicacionMenor = document.querySelector('#ubicacionMenor');
+const ubicacionA = document.querySelector('#ubicacionA');
+const ubicacionB = document.querySelector('#ubicacionB');
